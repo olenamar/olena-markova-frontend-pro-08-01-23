@@ -1,14 +1,17 @@
-const string = 'london is the capital of great britain its political economic and cultural centre';
+const offerText = 'london is the capital of great britain its political economic and cultural centre';
 
-function word(string) {
-    const arrString = string.split(' ');
-    let shortWord = "";
-    for(let i = 0; i < arrString.length; i++) {
-        if(arrString[i].length > shortWord) {
-            shortWord = arrString[i].length;
-        }      
-    }
-return shortWord;
+function word(text){
+    let maxWord = '';
+    if(typeof text === 'string'){
+        const offerText = text.split(' ');
+        for(let i = 0; i < offerText.length; i++){
+            if(offerText[i].length > maxWord.length){
+                maxWord = offerText[i];
+            }   
+        }   
+    } else { 
+        maxWord = '';
+    }        
+return maxWord;
 }
-
-console.log(word(string));
+console.log(word(offerText));
